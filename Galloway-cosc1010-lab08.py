@@ -1,8 +1,8 @@
-# Your Name Here
+# Rylan Galloway
 # UWYO COSC 1010
-# Submission Date
-# Lab XX
-# Lab Section:
+# Submission Date 11/4/2024
+# Lab 8
+# Lab Section: 14
 # Sources, people worked with, help given to:
 # your
 # comments
@@ -13,8 +13,15 @@
 # If they can't be converted return false
 # Other wise return the converted int or float 
 # Floats should only have one decimal point in them 
+##use this function in the third part and wait until the user types exit to print values
 
-
+def Int_Or_Not(string):
+    try:
+        float(string)
+        print("True")
+    except ValueError:
+        print("False")
+Int_Or_Not("45")
 print("*" * 75)
 
 
@@ -38,8 +45,16 @@ print("*" * 75)
 # Remember all inputs are strings, but the function needs ints or floats
 # Call your function and print the resulting list
 
+def point_Slope_Equation(m, b, xlower, xhigher):
+    m_actual = Int_Or_Not(m)
+    b_actual = Int_Or_Not(b)
+    xl_actual = Int_Or_Not(xlower)
+    xh_actual = Int_Or_Not(xhigher)
+    if (m_actual and b_actual and xl_actual and xh_actual):
+      y=[]
+      for number in range(xl_actual,xh_actual):
+          y.append(number)
 print("*" * 75)
-
 
 # Write a function to solve the quadratic formula
 # https://en.wikipedia.org/wiki/Quadratic_formula
