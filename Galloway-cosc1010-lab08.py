@@ -16,12 +16,14 @@
 ##use this function in the third part and wait until the user types exit to print values
 
 def Int_Or_Not(string):
+    returnValue = False
     try:
-        float(string)
-        print("True")
+        returnValue = float(string)
+        returnValue = int(string)
     except ValueError:
-        print("False")
-Int_Or_Not("45")
+        pass
+    return returnValue
+print(Int_Or_Not("45"))
 print("*" * 75)
 
 
@@ -50,10 +52,17 @@ def point_Slope_Equation(m, b, xlower, xhigher):
     b_actual = Int_Or_Not(b)
     xl_actual = Int_Or_Not(xlower)
     xh_actual = Int_Or_Not(xhigher)
+    print(m_actual,b_actual,xl_actual,xh_actual)
     if (m_actual and b_actual and xl_actual and xh_actual):
-      y=[]
-      for number in range(xl_actual,xh_actual):
-          y.append(number)
+        x=[]
+        y=[]
+        for number in range(xl_actual,xh_actual):
+            x.append(number)
+    
+            n = ((m_actual)(number) + (b_actual))
+            y.append(n)
+        print(y)
+print(point_Slope_Equation(2,3,6,9))
 print("*" * 75)
 
 # Write a function to solve the quadratic formula
