@@ -3,7 +3,7 @@
 # Submission Date 11/4/2024
 # Lab 8
 # Lab Section: 14
-# Sources, people worked with, help given to:
+# Sources, people worked with, help given to: Danny Keuning 
 # your
 # comments
 # here
@@ -16,13 +16,13 @@
 ##use this function in the third part and wait until the user types exit to print values
 
 def Int_Or_Not(string):
-    returnValue = False
     try:
-        returnValue = float(string)
-        returnValue = int(string)
+        string = float(string)
+        string = int(string)
+        return True
     except ValueError:
         pass
-    return returnValue
+    return False
 print(Int_Or_Not("45"))
 print("*" * 75)
 
@@ -52,17 +52,16 @@ def point_Slope_Equation(m, b, xlower, xhigher):
     b_actual = Int_Or_Not(b)
     xl_actual = Int_Or_Not(xlower)
     xh_actual = Int_Or_Not(xhigher)
-    print(m_actual,b_actual,xl_actual,xh_actual)
     if (m_actual and b_actual and xl_actual and xh_actual):
         x=[]
         y=[]
         for number in range(xl_actual,xh_actual):
             x.append(number)
     
-            n = ((m_actual)(number) + (b_actual))
+            n = ((m_actual*number) + (b_actual))
             y.append(n)
-        print(y)
-print(point_Slope_Equation(2,3,6,9))
+        return y
+print(point_Slope_Equation(2,4,6,9))
 print("*" * 75)
 
 # Write a function to solve the quadratic formula
@@ -72,3 +71,18 @@ print("*" * 75)
 # Create a loop like above to prompt the user for input for the three values
 # Create a second function that just does the square root operation 
     # If the number you are trying to take the square root of is negative, return null
+def quadratic_equation (a,b,c):
+    discriminate = b**2 - 4*a*c
+    if discriminate <0:
+        return 'Null Value'
+    else:
+        x1 = round((-b +((b**2 -4*a*c)**(1/2))/(2*a)))
+        x2 = round((-b -((b**2 -4*a*c)**(1/2))/(2*a)))
+        return x1, x2
+while(True):
+    a= int(input('Value A: '))
+    b= int(input('Value B: '))
+    c= int(input('Value C: '))
+    break
+answers = quadratic_equation(a,b,c)
+print(f'Solutions: {answers}')
